@@ -6,7 +6,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.black,
-				null_ls.builtins.diagnostics.pylint,
+				--null_ls.builtins.diagnostics.pyright,
 			},
 		})
 		vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, {})

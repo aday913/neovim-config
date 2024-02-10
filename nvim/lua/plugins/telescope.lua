@@ -20,7 +20,7 @@ return {
 				},
 			})
 			require("telescope").load_extension("ui-select")
-			require("telescope").extensions.lazygit.lazygit()
+			--require("telescope").extensions.lazygit.lazygit()
 		end,
 	},
 }
