@@ -11,12 +11,12 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "gopls",
+          -- "gopls",
           "marksman",
           "pyright",
-          "rust_analyzer",
+          -- "rust_analyzer",
           "yamlls",
-          "tsserver",
+          -- "tsserver",
           "bashls",
           "dockerls",
         },
@@ -31,27 +31,27 @@ return {
       local utils = require("lspconfig/util")
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        cmd = { "gopls" },
-        filetypes = {
-          "go",
-          "gomod",
-          "gowork",
-          "gotmpl",
-        },
-        root_dir = utils.root_pattern("go.work", "go.mod", ".git"),
-        settings = {
-          gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-            analyses = {
-              unusedparams = true
-            }
-          }
-        }
-      })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
+      -- lspconfig.gopls.setup({
+      --   capabilities = capabilities,
+      --   cmd = { "gopls" },
+      --   filetypes = {
+      --     "go",
+      --     "gomod",
+      --     "gowork",
+      --     "gotmpl",
+      --   },
+      --   root_dir = utils.root_pattern("go.work", "go.mod", ".git"),
+      --   settings = {
+      --     gopls = {
+      --       completeUnimported = true,
+      --       usePlaceholders = true,
+      --       analyses = {
+      --         unusedparams = true
+      --       }
+      --     }
+      --   }
+      -- })
+      -- lspconfig.tsserver.setup({ capabilities = capabilities })
       lspconfig.bashls.setup({ capabilities = capabilities })
       lspconfig.dockerls.setup({ capabilities = capabilities })
       vim.keymap.set("n", "H", vim.lsp.buf.hover, {})
